@@ -5,7 +5,7 @@ pipeline {
     stage('Checkout') {
       steps {
         // Checkout the source code from your Git repository
-        git 'https://github.com/your-repo/react-app.git'
+        git 'https://github.com/mfaraz669/Food-Villa.git'
       }
     }
     
@@ -23,6 +23,19 @@ pipeline {
         // Build the React.js application
         nodejs('node-version') {
           sh 'npm run build'
+        }
+      }
+    }
+   
+    stage('Static Code Analysis') {
+      environment {
+        SONAR_URL = "http://3.108.227.52:9000"
+      }
+      steps {
+        withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
+          // Run SonarQube Scanner to analyze the code
+        withSonarQubeEnv('SonarQube-Server') {
+          sh 'sonar-scanner' -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
         }
       }
     }
