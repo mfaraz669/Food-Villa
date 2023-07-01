@@ -18,9 +18,15 @@ artifacts:
   # include all files required to run application
   # notably excluded is node_modules, as this will cause overwrite error on deploy
   files:
-    - public/**/*
+    - index.html
     - src/**/*
+    - img/**/*
     - package.json
+    - jest.config.js
+    - netlify.toml
+    - package-lock.json
+    - style.css
+    - tailwind.config.js
     - server.js
     - appspec.yml
     - scripts/**/*
