@@ -1,0 +1,44 @@
+# Dependency folders
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build output
+dist
+build
+.next
+out
+
+# Logs
+*.log
+logs
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# Git
+.git
+.gitignore
+
+# Environment & secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Docker-related (not needed inside image)
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Tests / coverage
+coverage
+*.test.js
+*.spec.js
+
+# Misc
+tmp
+temp
